@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"   
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      >
+	<h:head>
+		<title>AutoInfo - Autostrada</title>
+		<h:outputStylesheet library="css" name="table-style.css"  />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</h:head>
+	<h:body class="homepage">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<div id="header-wrapper">
+					<div class="container">
+
+						<!-- Header -->
+							<header id="header">
+								<div class="inner">
+
+									<!-- Logo -->
+										<h1><a>AutoInfo</a></h1>
+
+									<!-- Nav -->
+										<nav id="nav">
+											<ul>
+												<li class="current_page_item">
+												<h:form>
+													<h:commandLink value="HOME" action="home" />
+												</h:form>
+												</li>
+											</ul>
+										</nav>
+
+								</div>
+							</header>
+
+						<!-- Banner -->
+							<div id="footer">
+								<h2><br /><br /><strong>Informazioni Autostrada Selezionata</strong></h2>
+							</div>
+
+					</div>
+				</div>
+
+			<!-- Main Wrapper -->
+				<div id="main-wrapper">
+					<div>
+					<h:form>
+		<h:dataTable value="#{autostrada.infoAutostradaScelta}" var="as"
+			styleClass="order-table"
+    		headerClass="order-table-header"
+    		rowClasses="order-table-odd-row,order-table-even-row">
+			<h:column>
+				<f:facet name="header">Codice Autostrada</f:facet>
+        #{as.cod_a}
+      </h:column>
+			<h:column>
+				<f:facet name="header">Nome Autostrada</f:facet>
+        #{as.nome_a}
+      </h:column>
+			<h:column>
+				<f:facet name="header">Lunghezza</f:facet>
+        #{as.lunghezza}
+      </h:column>
+      			<h:column>
+				<f:facet name="header">Traffico Medio</f:facet>
+        #{as.traffico_medio}
+      </h:column>
+		</h:dataTable>
+	</h:form>
+	
+	
+					<div>
+					<header>
+					<h2></h2><p><strong>Informazioni Caselli dell'Autostrada Selezionata:</strong></p>
+					</header>
+					</div>
+					<h:form>
+		<h:dataTable value="#{autostrada.infoCaselliConAutostradaScelta}" var="icas"
+			styleClass="order-table"
+    		headerClass="order-table-header"
+    		rowClasses="order-table-odd-row,order-table-even-row">
+			<h:column>
+				<f:facet name="header">Nome Casello</f:facet>
+				<h:commandLink value="#{icas.nome_ca}"
+					action="#{casello.setNomesceltoCasello(icas.nome_ca)}" />
+        
+      </h:column>
+			<h:column>
+				<f:facet name="header">Distanza</f:facet>
+        #{icas.distanza}
+      </h:column>
+
+    
+		</h:dataTable>
+	</h:form>
+					
+					</div>
+
+				</div>
+
+			<!-- Footer Wrapper -->
+				<div id="footer-wrapper">
+					<footer id="footer" class="container">
+						<div class="row">
+							<div class="3u 12u(mobile)">
+
+								<!-- Links -->
+									<section>
+										<h2>Sede aziendale:</h2>
+										<ul class="divided">
+											<li><a>Strada Le Grazie, 15, 37134 Verona (VR).</a></li>
+										</ul>
+									</section>
+
+							</div>
+							<div class="3u 12u(mobile)">
+
+								<!-- Links -->
+									<section>
+										<h2>Contatti:</h2>
+										<ul class="divided">
+											<li><a> -  davide.faustini@studenti.univr.it</a></li>
+											<li><a> -  alex.salvetti@studenti.univr.it</a></li>
+											<li><a> -  silvia.ulivelli@studenti.univr.it</a></li>
+										</ul>
+									</section>
+							</div>
+						</div>
+						<div class="row">
+							<div class="12u">
+								<div id="copyright">
+									<ul class="menu">
+										<li>&copy; AutoInfo. Tutti i diritti riservati.</li><li>Design: Alex Salvetti</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</footer>
+				</div>
+
+		</div>
+
+		<!-- Scripts -->
+
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/skel-viewport.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+
+	</h:body>
+</html>

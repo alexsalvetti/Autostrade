@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<faces-config xmlns="http://java.sun.com/xml/ns/javaee" 
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+      http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd"
+   version="2.0">
+   
+<navigation-rule>
+  <navigation-case>
+      <from-outcome>home</from-outcome>
+        <to-view-id>/home.jsf</to-view-id>
+        <redirect />
+    </navigation-case>
+  <navigation-case>
+      <from-outcome>autostrada</from-outcome>
+        <to-view-id>/autostrada.jsf</to-view-id>
+        <redirect />
+    </navigation-case>
+    <navigation-case>
+      <from-outcome>incidenti</from-outcome>
+        <to-view-id>/incidenti.jsf</to-view-id>
+        <redirect />
+    </navigation-case>
+      <navigation-case>
+      <from-outcome>casello</from-outcome>
+        <to-view-id>/casello.jsf</to-view-id>
+        <redirect />
+    </navigation-case>
+         <navigation-case>
+      <from-outcome>login</from-outcome>
+        <to-view-id>/login.jsf</to-view-id>
+        <redirect />
+    </navigation-case>
+            <navigation-case>
+      <from-outcome>success</from-outcome>
+        <to-view-id>/ingressi.jsf</to-view-id>
+        <redirect />
+    </navigation-case>
+            <navigation-case>
+      <from-outcome>failure</from-outcome>
+        <to-view-id>/login.jsf</to-view-id>
+        <redirect />
+    </navigation-case>
+</navigation-rule>
+
+ </faces-config>

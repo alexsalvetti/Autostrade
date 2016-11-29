@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"   
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      >
+	<h:head>
+		<title>AutoInfo</title>
+		<h:outputStylesheet library="css" name="table-style.css"  />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</h:head>
+	<h:body class="homepage">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<div id="header-wrapper">
+					<div class="container">
+
+						<!-- Header -->
+							<header id="header">
+								<div class="inner">
+
+									<!-- Logo -->
+										<h1><a>AutoInfo</a></h1>
+
+									<!-- Nav -->
+										<nav id="nav">
+											<ul>
+												<li class="current_page_item">
+												<h:form>
+													<h:commandLink value="HOME" action="home" />
+												</h:form>
+												</li>
+												<li>
+												<h:form>
+													<h:commandLink value="Incidenti" action="incidenti" />
+												</h:form>
+												</li>
+											</ul>
+										</nav>
+
+								</div>
+							</header>
+
+						<!-- Banner -->
+							<div id="banner">
+								<h2><strong>Benvenuto in AutoInfo, </strong> <br />la nostra azienda di autostrade! </h2>
+							</div>
+
+					</div>
+				</div>
+
+			<!-- Main Wrapper -->
+				<div id="main-wrapper">
+					<div class="wrapper style1">
+						<div class="inner">
+
+							<!-- Feature 1 -->
+								<section class="container box feature1">
+									<div class="row">
+										<div class="12u">
+											<header class="first major">
+												<h2>Chi siamo:</h2>
+												<p>La nostra azienda nasce nel 2015 per un progetto universitario è permette a tutti di visionare
+												informazioni riguardanti le Autostrade italiane.</p>
+											</header>
+										</div>
+									</div>
+									
+								</section>
+
+						</div>
+					</div>
+					
+					<div>
+					<header>
+					<br/>
+						<h2><strong>Le Autostrade:</strong></h2>
+					</header>
+					<h:form>
+		<h:dataTable value="#{autostrada.autostrade}" var="a"
+			styleClass="order-table"
+    		headerClass="order-table-header"
+    		rowClasses="order-table-odd-row,order-table-even-row">
+    		
+			<h:column>
+				<f:facet name="header">Codice Autostrada</f:facet>
+        <h:commandLink value="#{a.cod_a}"
+			action="#{autostrada.setCodicesceltoAutostrada(a.cod_a)}" />
+      </h:column>
+			<h:column>
+				<f:facet name="header">Nome Autostrada</f:facet>
+        #{a.nome_a}
+      </h:column>
+			<h:column>
+				<f:facet name="header">Lunghezza</f:facet>
+        #{a.lunghezza}
+      </h:column>
+      		<h:column>
+				<f:facet name="header">Numero Caselli</f:facet>
+        #{a.n_caselli}
+      </h:column>
+		</h:dataTable>
+	</h:form>
+	<br />
+	
+					
+					</div>
+
+				</div>
+
+			<!-- Footer Wrapper -->
+				<div id="footer-wrapper">
+					<footer id="footer" class="container">
+						<div class="row">
+							<div class="3u 12u(mobile)">
+
+								<!-- Links -->
+									<section>
+										<h2>Sede aziendale:</h2>
+										<ul class="divided">
+											<li><a>Strada Le Grazie, 15, 37134 Verona (VR).</a></li>
+										</ul>
+									</section>
+
+							</div>
+							<div class="3u 12u(mobile)">
+
+								<!-- Links -->
+									<section>
+										<h2>Contatti:</h2>
+										<ul class="divided">
+											<li><a> -  davide.faustini@studenti.univr.it</a></li>
+											<li><a> -  alex.salvetti@studenti.univr.it</a></li>
+											<li><a> -  silvia.ulivelli@studenti.univr.it</a></li>
+										</ul>
+									</section>
+							</div>
+						</div>
+						<div class="row">
+							<div class="12u">
+								<div id="copyright">
+									<ul class="menu">
+										<li>&copy; AutoInfo. Tutti i diritti riservati.</li><li>Design: Alex Salvetti</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</footer>
+				</div>
+
+		</div>
+
+		<!-- Scripts -->
+
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/skel-viewport.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+
+	</h:body>
+</html>
